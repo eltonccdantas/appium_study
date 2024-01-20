@@ -14,14 +14,14 @@ from selenium.webdriver.common.actions.pointer_input import PointerInput
 
 options = AppiumOptions()
 options.load_capabilities({
-	"platformName": "Android",
-	"appium:automationName": "UiAutomator2",
-	"appium:appPackage": "com.google.android.calculator",
-	"appium:appActivity": "com.android.calculator2.Calculator",
-	"appium:ensureWebviewsHavePages": True,
-	"appium:nativeWebScreenshot": True,
-	"appium:newCommandTimeout": 3600,
-	"appium:connectHardwareKeyboard": True
+    "platformName": "Android",
+    "appium:automationName": "UiAutomator2",
+    "appium:appPackage": "com.google.android.calculator",
+    "appium:appActivity": "com.android.calculator2.Calculator",
+    "appium:ensureWebviewsHavePages": True,
+    "appium:nativeWebScreenshot": True,
+    "appium:newCommandTimeout": 3600,
+    "appium:connectHardwareKeyboard": True
 })
 
 driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
@@ -35,7 +35,7 @@ el3.click()
 el4 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="igual")
 el4.click()
 
-result = driver.find_element(by=AppiumBy.ID , value="com.google.android.calculator:id/result_final")
+result = driver.find_element(by=AppiumBy.ID, value="com.google.android.calculator:id/result_final")
 
 assert result.text == "56"
 
